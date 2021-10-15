@@ -1,16 +1,25 @@
-# fimes
+# 🎞 app: filmes
 
-A new Flutter project.
+Projeto de catálogo de filmes, baseando-se nos dados da API TMDb (https://www.themoviedb.org/?language=pt-BR).
 
-## Getting Started
+## Links
+Site que utilizei para compreender as funcionalidades:<br>
+https://medium.com/flutter-comunidade-br/criando-um-aplicativo-em-flutter-para-consumir-uma-api-de-filmes-tmdb-2b5a9982bfcd
 
-This project is a starting point for a Flutter application.
+API: <br>
+https://www.themoviedb.org/?language=pt-BR
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Projeto
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Este projeto foi desenvolvido em flutter, para propósitos meramente educacionais.
+
+Alguns recursos:
+
+- Consumir dados de uma API pública, utilizando autenticação.
+- Exibir os dados em formato de lista
+- Ao selecionar um filme, exibir os detalhes do mesmo.
+
+📣Sinta-se a vontade para copiar o código e compartilhar.
+
+_se possivel, me envie um feedback! Estou em aprimoramento e toda dica, crítica ou sugestão é muito bem vinda!_
