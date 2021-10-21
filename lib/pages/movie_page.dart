@@ -7,6 +7,8 @@ import '../widgets/movie_card.dart';
 import '../controllers/movie_controller.dart';
 
 class MoviePage extends StatefulWidget {
+  const MoviePage({Key? key}) : super(key: key);
+
   @override
   _MoviePageState createState() => _MoviePageState();
 }
@@ -50,18 +52,24 @@ class _MoviePageState extends State<MoviePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: _buildAppBar(),
-      body: _buildMovieGrid(),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      key: UniqueKey(),
+      child: Scaffold(
+        key: UniqueKey(),
+        appBar: _buildAppBar(),
+        body: _buildMovieGrid(),
+        //resizeToAvoidBottomInset: true,
+      ),
     );
   }
 
   _buildAppBar() {
     return AppBar(
-      title: Text(vAppName),
+      title: const Text(vAppName),
       actions: [
         IconButton(
-          icon: Icon(Icons.refresh),
+          icon: const Icon(Icons.refresh),
           onPressed: _initialize,
         ),
       ],
@@ -70,20 +78,19 @@ class _MoviePageState extends State<MoviePage> {
 
   _buildMovieGrid() {
     if (_controller.loading) {
-      return CenteredProgress();
+      return const CenteredProgress();
     }
 
-/*
-    if (_controller.movieError != null) {
+    if (_controller.movieError.message.isNotEmpty) {
       return CenteredMessage(message: _controller.movieError.message);
     }
-*/
-print('_controller.moviesCount: ${_controller.moviesCount}');
+
+    debugPrint('_controller.moviesCount: ${_controller.moviesCount}');
     return GridView.builder(
       controller: _scrollController,
       padding: const EdgeInsets.all(2.0),
       itemCount: _controller.moviesCount,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         mainAxisSpacing: 2,
         crossAxisSpacing: 2,
@@ -95,16 +102,18 @@ print('_controller.moviesCount: ${_controller.moviesCount}');
 
   Widget _buildMovieCard(context, index) {
     final movie = _controller.movies[index];
-    return MovieCard(
-      posterPath: movie.posterPath,
-      onTap: () => _openDetailPage(movie.id),
-      id: movie.id,
+    return Padding(
+      padding: const EdgeInsets.all(2.0),
+      child: MovieCard(
+        posterPath: movie.posterPath,
+        voteAverage: movie.voteAverage,
+        onTap: () => _openDetailPage(movie.id)
+      ),
     );
-
   }
 
   _openDetailPage(movieId) {
-    print('movieID: $movieId');
+    debugPrint('movieID: $movieId');
     Navigator.push(
       context,
       MaterialPageRoute(

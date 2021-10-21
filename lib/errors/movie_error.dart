@@ -3,7 +3,9 @@
 */
 
 abstract class MovieError implements Exception {
-  late String message;
+  String message = '';
+
+  MovieError(this.message);
 
   @override
   String toString() {
@@ -12,7 +14,7 @@ abstract class MovieError implements Exception {
 }
 
 class MovieRepositoryError extends MovieError {
-  MovieRepositoryError(String message) {
+  MovieRepositoryError(String message) : super('') {
     this.message = message;
   }
 }

@@ -13,7 +13,7 @@ class CenteredMessage extends StatelessWidget {
     required this.message,
     this.color = Colors.white24,
     this.iconSize = 64.0,
-    this.icon = Icons.warning,
+    this.icon = Icons.warning_rounded,
     this.space = 10.0,
     this.padding = const EdgeInsets.all(20.0),
   }) : super(key: key);

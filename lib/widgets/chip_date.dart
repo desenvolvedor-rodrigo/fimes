@@ -11,7 +11,7 @@ class ChipDate extends StatelessWidget {
   const ChipDate({
     Key? key,
     required this.date,
-    this.color = Colors.red,
+    this.color = Colors.brown,
     this.dateFormat = vDateFormat,
   }) : super(key: key);
 
@@ -20,7 +20,7 @@ class ChipDate extends StatelessWidget {
     return Chip(
       backgroundColor: color.withOpacity(0.3),
       padding: const EdgeInsets.symmetric(horizontal: 10.0),
-      avatar: CircleAvatar(
+      avatar: const CircleAvatar(
         backgroundColor: Colors.transparent,
         child: Icon(
           Icons.calendar_today,
@@ -31,7 +31,7 @@ class ChipDate extends StatelessWidget {
       label: Text(
         DateFormat(dateFormat).format(date),
         textAlign: TextAlign.end,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 18,
           color: Colors.white,
         ),

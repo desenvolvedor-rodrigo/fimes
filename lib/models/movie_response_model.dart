@@ -23,9 +23,9 @@ class MovieResponseModel {
 
   factory MovieResponseModel.fromMap(Map<String, dynamic> json) =>
       MovieResponseModel(
-        page: json["page"],
-        totalResults: json["total_results"],
-        totalPages: json["total_pages"],
+        page: json["page"] ?? 0,
+        totalResults: json["total_results"] ?? 0,
+        totalPages: json["total_pages"] ?? 0,
         movies: List<MovieModel>.from(
             json["results"].map((x) => MovieModel.fromMap(x))),
       );

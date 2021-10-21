@@ -9,6 +9,10 @@ const vApiKeyV4 = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NDQ3NDYzMmRmOTExMTk3MmQwNTVi
 const vApiKey   = '54474632df9111972d055b10a6401ce4';
 const vServerError = 'Falha ao conectar ao servidor. Tente novamente mais tarde.';
 
+const vLinkFilmes = '/movie/popular?page=';
+const vLinkFilmeDet = '/movie/';
+
+
 final vDioOptions = BaseOptions(
   baseUrl: vBaseUrl,
   connectTimeout: 5000,

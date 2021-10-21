@@ -1,42 +1,36 @@
-import 'package:fimes/pages/movie_detail_page.dart';
 import 'package:flutter/material.dart';
 
 class MovieCard extends StatelessWidget {
   final String posterPath;
   final Function onTap;
-  final int id;
+  final double voteAverage;
 
   const MovieCard({
     Key? key,
     this.posterPath = '',
     required this.onTap,
-    required this.id,
+    required this.voteAverage,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    
-  _openDetailPageTESTE(movieId) {
-    print('movieID: $movieId');
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => MovieDetailPage(movieId),
-      ),
-    );
-  }
-
-    return //GestureDetector(
-      InkWell(
-      onTap: () => _openDetailPageTESTE(id),
+    return InkWell(
+      onTap: () => onTap(),
       child: Container(
+        padding: const EdgeInsets.all(5),
         decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
           image: DecorationImage(
             image: NetworkImage(
               'https://image.tmdb.org/t/p/w220_and_h330_face$posterPath',
             ),
             fit: BoxFit.cover,
           ),
+        ),
+        child: Row(
+          children: [const Icon(Icons.star), Text(voteAverage.toString())],
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.start,
         ),
       ),
     );

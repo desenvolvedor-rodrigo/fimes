@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CenteredProgress extends StatelessWidget {
+  const CenteredProgress({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: CircularProgressIndicator(),
     );
   }

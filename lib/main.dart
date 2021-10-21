@@ -9,17 +9,19 @@ import 'core/theme_app.dart';
 import 'pages/movie_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const AppFilmes());
 }
 
-class MyApp extends StatelessWidget {
+class AppFilmes extends StatelessWidget {
+  const AppFilmes({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: vAppName,
-      theme: tThemeApp,
-      home: MoviePage(),
+      theme: vThemeApp,
+      home: const MoviePage(),
     );
   }
 }
